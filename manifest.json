@@ -1,0 +1,38 @@
+{
+  "name": "Starter",
+  "version": "0.0.1",
+  "description": "Basic extension",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "tabs",
+    "bookmarks",
+    "history"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "images/keyboard_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/search*"
+      ],
+      "js": [
+        "google.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [],
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "dropdown.html",
+    "default_icon": {
+      "128": "images/keyboard_128.png"
+    }
+  },
+  "content_security_policy": {}
+}
